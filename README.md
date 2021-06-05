@@ -3,7 +3,7 @@
 Projects from Impractical python projects : playful programming activities to
 make you smarter
 
-##Layout
+## Layout
   - Each chapter will be listed with questions that i think are fun or something
     that i can learn from . I will not do all the questions but those that
     i deem hard or somewhat interesting to do .
@@ -14,3 +14,4 @@ make you smarter
   - Feel free to correct my versions of the code , sometimes i know it might not
     be the best method, always strive to improve on things that i did not know
     before.
+  - I will also try following the psuedo code and try creating my own method and comparing it . 
