@@ -1,0 +1,4 @@
+There are a few things i wanted to try out :
+
+
+Debugger used, i wanted to see what was going on , as though i did indeed have the model answer i was more curious to see how things would work , and go from there.

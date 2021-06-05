@@ -38,9 +38,6 @@ def bar_chart(sentence: str) -> dict:
 # Solutions to there method ,
 def better_method(sentence: str) -> dict:
     alphabet = string.ascii_lowercase
-    # Defaultdict module allows you to build  dictionary keys very fast
-    # TODO: research on defaultdict() and how that can be used to make code
-    # better
     mapped = defaultdict(list)
 
     for characters in sentence:
@@ -56,6 +53,9 @@ def main() -> None:
     sentence = "Like the castle in its corner in medeval game, io forsee terrible trouble and I stay here just the same."
 
     pp(better_method(sentence))
+    print("my version")
+
+    pp(bar_chart(sentence))
 
 
 if __name__ == "__main__":
