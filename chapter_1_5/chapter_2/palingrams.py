@@ -96,10 +96,8 @@ if __name__ == "__main__":
 
                 if reversed word fragement at end of word is in word list and letters before form a palindromic sequence:
                     append reveresed word to palingram list
-"""
 
 
-"""
 i := range(len(word))
 word[i:] =>
             x x x x
@@ -115,25 +113,19 @@ word[:i] =>
             x x x o
             x x x x
 
-"""
 
-"""
 Why does the reverse work ?
-    
     if rv_word[:end] => end = len(rev_word)
 
     Refer to this code sample
     rv_word[:end]
     rv_word
     rv_word[:end-1]
-    
-    
         redder
         redder
         redde
 
 rv_word[:end-i] =>
-            
             x x x x
             x x x o
             x x o o
