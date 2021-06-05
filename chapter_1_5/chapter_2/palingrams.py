@@ -34,17 +34,12 @@ def find_palingrams() -> list:
                     word[i:] == reverse_word[: end - i]
                     and reverse_word[: end - i] in word_list
                 ):
-                    # breakpoint()
-
                     palingrams.append((word, reverse_word[: end - i]))
 
                 if (
                     word[:i] == reverse_word[: end - i]
                     and reverse_word[: end - i] in word_list
                 ):
-
-                    # breakpoint()
-
                     palingrams.append(("reverse", word, reverse_word[: end - i]))
 
     return sorted(palingrams)
@@ -55,6 +50,9 @@ def understanding(word: str) -> None:
     reverse_word = word[::-1]
 
     end = len(word)
+    print(reverse_word[:end])
+    print(reverse_word)
+    print(reverse_word[: end - 1])
 
     start = [
         (word[i:], reverse_word[: end - i], (word[i:] == reverse_word[: end - i]))
@@ -117,4 +115,28 @@ word[:i] =>
             x x x o
             x x x x
 
+"""
+
+"""
+Why does the reverse work ?
+    
+    if rv_word[:end] => end = len(rev_word)
+
+    Refer to this code sample
+    rv_word[:end]
+    rv_word
+    rv_word[:end-1]
+    
+    
+        redder
+        redder
+        redde
+
+rv_word[:end-i] =>
+            
+            x x x x
+            x x x o
+            x x o o
+            x o o o
+            o o o o
 """
