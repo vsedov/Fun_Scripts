@@ -66,6 +66,7 @@ def understanding(word: str) -> None:
     ]
 
     ic(start)
+    print("\n")
     ic(end)
 
 
@@ -99,6 +100,21 @@ if __name__ == "__main__":
                     append reveresed word to palingram list
 """
 
+
 """
-    1 we are looking if some word in the list[i:] == reverse[::(word_ammount)-i]
+i := range(len(word))
+word[i:] =>
+            x x x x
+            o x x x
+            o o x x
+            o o o x
+            o o o o
+
+word[:i] =>
+            o o o o
+            x o o o
+            x x o o
+            x x x o
+            x x x x
+
 """
