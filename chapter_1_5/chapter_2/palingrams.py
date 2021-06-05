@@ -9,6 +9,7 @@ __author__ = "Viv Sedov"
 __email__ = "viv.sv@hotmail.com"
 
 import pyinspect as pi
+from icecream import ic
 
 import load_dictionary
 
@@ -44,14 +45,38 @@ def find_palingrams() -> list:
 
                     # breakpoint()
 
-                    palingrams.append((word, reverse_word[: end - i]))
+                    palingrams.append(("reverse", word, reverse_word[: end - i]))
 
     return sorted(palingrams)
+
+
+def understanding(word: str) -> None:
+
+    reverse_word = word[::-1]
+
+    end = len(word)
+
+    start = [
+        (word[i:], reverse_word[: end - i], (word[i:] == reverse_word[: end - i]))
+        for i in range(end)
+    ]
+    end = [
+        (word[:i], reverse_word[: end - i], (word[:i] == reverse_word[: end - i]))
+        for i in range(end)
+    ]
+
+    ic(start)
+    ic(end)
 
 
 def main() -> None:
     # question("how to create palingrams?")
     print(*find_palingrams(), sep="\n")
+    print("\n")
+
+    understanding("cardamom")
+    print("\n")
+    understanding("redder")
 
 
 if __name__ == "__main__":
@@ -59,7 +84,7 @@ if __name__ == "__main__":
     main()
 
 """
-    Psuedo code : 
+    Psuedo code :
 
     1. load digital dictionary as a list of words
     2. start an empty list to hold these words
@@ -75,5 +100,5 @@ if __name__ == "__main__":
 """
 
 """
-    1 we are looking if some word in the list[i:] == reverse[::(word_ammount)-i] 
+    1 we are looking if some word in the list[i:] == reverse[::(word_ammount)-i]
 """
