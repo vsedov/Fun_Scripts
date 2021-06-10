@@ -19,7 +19,7 @@ class LinearEquations:
         """Pick method to solve x"""
         self.x = self.__option()
 
-    def __option(self):
+    def __option(self) -> None:
         try:
             x = int(
                 input(
@@ -89,7 +89,10 @@ def enter_matrix() -> np.ndarray:
     np.ndarray:
         numpy array format matrix without any strings
     """
-    return np.array(ast.literal_eval(str(input("Enter a matrix"))))
+    try:
+        return np.array(ast.literal_eval(str(input("Enter a matrix"))))
+    except Exception as e:
+        main()
 
 
 def main() -> None:
