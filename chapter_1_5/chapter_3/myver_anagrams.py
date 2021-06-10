@@ -32,7 +32,7 @@ def find_anagram(anagram: str = None) -> list[str]:
 
     word_list = dictionary_clean(load_file("../chapter_2/2of4brif.txt"))
 
-    return [x for x in word_list if sorted(x) == s_anagram and x != anagram]
+    return [word for word in word_list if sorted(word) == s_anagram and word != anagram]
 
 
 def main() -> None:
