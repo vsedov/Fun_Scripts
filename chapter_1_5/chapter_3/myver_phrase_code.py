@@ -10,42 +10,20 @@ __email__ = "viv.sv@hotmail.com"
 
 
 import pyinspect as pi
-from chapter_2.load_dictionary import load_file
 
 from myver_anagrams import find_anagram
 
 
-# Not effective , do not approve of this function that has been made
-def test_function(name: str) -> list[str]:
-
-    container = []
-    remaining = ""
-    for i in range(len(name)):
-        anagram = find_anagram(name[:i])
-        if len(anagram) != 0:
-            for i in anagram:
-                container.append(i)
-        else:
-            remaining += name[i]
-
-    print(container)
-    print(remaining)
-
-    # is that what we are supposed to be doing ? Interesting question i must say
-    # - will ponder over this later
-    print(find_anagram(remaining))
+def precess_choice(choice: str) -> bool:
+    pass
 
 
-def phrase_code(name: str = None) -> None:
-    word_list = load_file("../chapter_2/2of4brif.txt")
-    if name is None:
-        name = str(input("Please enter a name"))
-
-    test_function(name)
+def find_anagram() -> list[str]:
+    pass
 
 
 def main() -> None:
-    phrase_code("forster")
+    pass
 
 
 if __name__ == "__main__":
