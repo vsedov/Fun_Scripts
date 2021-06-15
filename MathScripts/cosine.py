@@ -17,12 +17,14 @@ class Cosine:
     def __init__(self, vector: np.ndarray, vector_2: np.ndarray):
         self.vectors = [vector, vector_2]
         print(self.cosine())
-
+        
     def legnth_mult(self) -> int:
-        return np.linalg.norm(self.vectors[0]) * np.linalg.norm(self.vectors[1])
+        norm_1 = round(np.linalg.norm(self.vectors[0]), 5)
+        norm_2 = round(np.linalg.norm(self.vectors[1]), 5)
+        return norm_1 * norm_2
 
     def dot_vector(self) -> int:
-        return int(np.dot(self.vectors[0].T, self.vectors[1]))
+        return round(np.dot(self.vectors[0].T, self.vectors[1])[0][0], 5)
 
     def cosine(self) -> np.float128:
         """
@@ -46,7 +48,7 @@ class Cosine:
 
 def main() -> None:
 
-    x, y = np.array([[2], [2], [-2]]), np.array([[2], [-2], [2]])
+    x, y = np.array([[1], [np.sqrt(3)]]), np.array([[-1], [np.sqrt(3)]])
 
     Cosine(x, y)
 
