@@ -17,13 +17,24 @@ class Cosine:
     def __init__(self, vector: np.ndarray, vector_2: np.ndarray):
         self.vectors = [vector, vector_2]
         print(self.cosine())
-        
+
     def legnth_mult(self) -> int:
         norm_1 = round(np.linalg.norm(self.vectors[0]), 5)
         norm_2 = round(np.linalg.norm(self.vectors[1]), 5)
         return norm_1 * norm_2
 
     def dot_vector(self) -> int:
+        """
+        Dot of two vectors
+
+        Vecotr_1.T dot Vector 2 as you cannto directly dot 2 vectors
+        due to shape error
+
+        Returns
+        -------
+        int:
+            returns a round number , on the given index of the dot, could of used axis but i cba
+        """
         return round(np.dot(self.vectors[0].T, self.vectors[1])[0][0], 5)
 
     def cosine(self) -> np.float128:
