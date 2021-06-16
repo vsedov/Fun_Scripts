@@ -9,19 +9,18 @@ __author__ = "Viv Sedov"
 __email__ = "viv.sv@hotmail.com"
 
 
-import sys
 from typing import Counter
 
 import pyinspect as pi
+from chapter_2.Dictionary_Cleanup import dictionary_clean
 from chapter_2.load_dictionary import load_file
 
 
 class Anagram:
     def __init__(self, name: str):
         self.main_phrase = ""
-        self.word_ammount = len(name)
         self.name_letter_map = Counter(name)
-        self.word_list = load_file("../chapter_2/2of4brif.txt")
+        self.word_list = dictionary_clean(load_file("../chapter_2/2of4brif.txt"))
         print("Original name : ", name)
         print("----------------------------------------------------------------\n")
 
@@ -37,13 +36,27 @@ class Anagram:
             if Counter(test) == word_letter_count:
                 main_list.append(word)
         print(*main_list, sep="\n")
+
+        if len(main_list) == 0:
+            print(
+                "there are no possible words that can be made with remaining words : "
+            )
+            print(*self.name_letter_map)
+            self.information_process()
+
         self.user_name_choice = str(
             input("Please enter a word that you would like to use for your phrase: ")
         )
         self.user_choice(main_list)
 
-    def information_process() -> None:
+    def information_process(self) -> None:
+        if len(self.name_letter_map) != 0:
+            print("----------------------------------------------------------------")
+            print("Remaining words were : ", self.name_letter_map)
+        print("----------------------------------------------------------------")
         print("your anagram is , ", self.main_phrase)
+        print("----------------------------------------------------------------")
+        exit()
 
     def user_choice(self, listowords: list) -> None:
         if self.user_name_choice not in listowords:
@@ -64,7 +77,7 @@ class Anagram:
                 print(self.name_letter_map)
                 self.find_anagram()
             else:
-                sys.exit(0)
+                self.information_process()
 
     def start(self) -> None:
         self.find_anagram()
@@ -80,12 +93,3 @@ def main() -> None:
 if __name__ == "__main__":
     pi.install_traceback()
     main()
-
-
-"""
-    Me talking to my self , without looking at the answers with repsets to how i would do this problem 
-
-
-    Might wantto convert this to a class and see how i would code this up that way , as im not 100% sure 
-    
-"""

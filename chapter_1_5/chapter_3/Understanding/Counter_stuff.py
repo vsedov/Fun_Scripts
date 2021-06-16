@@ -37,6 +37,7 @@ def method_2(main_name: str, name_letter_map: dict, word_list: list) -> None:
 def main() -> None:
     main_name = "forest"
     name_letter_map = Counter(main_name)
+    print(len(name_letter_map))
     word_list = ["fost", "of", "for", "hambugger", "test"]
 
     print(name_letter_map - Counter("of"))
