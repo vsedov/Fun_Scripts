@@ -59,7 +59,9 @@ class Cosine:
 
 def main() -> None:
 
-    x, y = np.array([[1], [np.sqrt(3)]]), np.array([[-1], [np.sqrt(3)]])
+    x, y = np.array([[np.sqrt(2)], [np.sqrt(8)]]), np.array(
+        [[np.sqrt(8)], [np.sqrt(2)]]
+    )
 
     Cosine(x, y)
 

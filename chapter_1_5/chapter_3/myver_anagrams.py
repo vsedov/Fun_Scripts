@@ -36,7 +36,7 @@ def find_anagram(anagram: str = None) -> list[str]:
 
 
 def main() -> None:
-    print(find_anagram("list"))
+    print(find_anagram("fortes"))
 
 
 if __name__ == "__main__":
