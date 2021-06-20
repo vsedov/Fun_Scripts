@@ -29,12 +29,13 @@ class Anagram:
         for word in self.word_list:
             word_letter_count = Counter(word.lower())
             test = ""
-            for letter in word:
-                if word_letter_count[letter] <= self.name_letter_map[letter]:
-                    test += letter
-
-            if Counter(test) == word_letter_count:
+            x = [
+                word_letter_count[letter] <= self.name_letter_map[letter]
+                for letter in word
+            ]
+            if all(x):
                 main_list.append(word)
+
         print(*main_list, sep="\n")
 
         if len(main_list) == 0:

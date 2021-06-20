@@ -21,23 +21,10 @@ def main() -> None:
     anagram_1 = "stop"
     anagram_2 = "pots"
 
-    print(anagram_1, anagram_2)
-
-    # we would first have to convert everything here into a list
-
-    anagram_1 = list(anagram_1)
-    anagram_2 = list(anagram_2)
-
-    # if we try to see if the words are equal , what we would get is the
-    # following
-
-    print(anagram_1 == anagram_2)
-    # Here you see that they are the same though - what we have to do here is
-    # make sure that we sort those values within the right order
-
-    print(f"({anagram_1}, {anagram_2})", sorted(anagram_2) == sorted(anagram_2))
+    x = counter([i for i in anagram_1])
 
 
 if __name__ == "__main__":
+
     pi.install_traceback()
     main()
