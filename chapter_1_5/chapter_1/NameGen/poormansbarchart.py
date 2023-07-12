@@ -19,13 +19,7 @@ from pprintpp import pprint as pp
 
 def bar_chart(sentence: str) -> dict:
     alphabet = string.ascii_lowercase
-    # Create it into one string i guess
-    filtered_letter = ""
-
-    for i in sentence:
-        if i in alphabet:
-            filtered_letter += i
-
+    filtered_letter = "".join(i for i in sentence if i in alphabet)
     sentence = sorted("".join(filtered_letter.lower().split()))
     word_amount = Counter(sentence)
 

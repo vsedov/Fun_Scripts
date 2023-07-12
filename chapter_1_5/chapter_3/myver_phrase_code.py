@@ -37,7 +37,7 @@ class Anagram:
 
         print(*main_list, sep="\n")
 
-        if len(main_list) == 0:
+        if not main_list:
             print(
                 "there are no possible words that can be made with remaining words : "
             )

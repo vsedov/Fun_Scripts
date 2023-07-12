@@ -26,9 +26,9 @@ def find_palingrams() -> list:
     palingrams = []
 
     for word in word_list:
-        reverse_word = word[::-1]
         end = len(word)
         if end > 1:
+            reverse_word = word[::-1]
             for i in range(end):
                 if (
                     word[i:] == reverse_word[: end - i]
