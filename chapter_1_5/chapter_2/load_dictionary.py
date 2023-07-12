@@ -22,7 +22,7 @@ def load_file(file: str) -> list:
             return [x.lower() for x in loaded_txt]
 
     except IOError as e:
-        print("{} error occoured on file {}".format(e, file), file=sys.stderr)
+        print(f"{e} error occoured on file {file}", file=sys.stderr)
 
     finally:
         in_file.close()

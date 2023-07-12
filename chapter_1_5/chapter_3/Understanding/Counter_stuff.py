@@ -19,18 +19,19 @@ def method_1(main_name: str, name_letter_map: dict, word_list: list) -> None:
     for word in word_list:
         word_map = Counter(word)
 
-        test_word = ""
-        for letter in word_map:
-            if word_map[letter] <= name_letter_map[letter]:
-                test_word += letter
+        test_word = "".join(
+            letter
+            for letter in word_map
+            if word_map[letter] <= name_letter_map[letter]
+        )
         if Counter(test_word) == word_map:
             ic(word)
 
 
 def method_2(main_name: str, name_letter_map: dict, word_list: list) -> None:
     container = []
+    test = ""
     for word in word_list:
-        test = ""
         word_map = Counter(word)
 
 

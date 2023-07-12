@@ -21,7 +21,7 @@ def main() -> None:
     anagram_1 = "stop"
     anagram_2 = "pots"
 
-    x = counter([i for i in anagram_1])
+    x = counter(list(anagram_1))
 
 
 if __name__ == "__main__":
